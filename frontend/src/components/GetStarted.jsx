@@ -648,7 +648,7 @@ const GetStarted = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
-                      ID Proofs * (e.g., Passport, ID Card)
+                      ID Proofs * (e.g., ID Card,Driving License)
                     </label>
                     <div className="relative w-full p-4 bg-gray-100/60 dark:bg-gray-800/50 border border-dashed border-orange-300 rounded-lg hover:bg-gray-200/60 dark:hover:bg-gray-800/20 transition-all duration-300">
                       <input
@@ -888,7 +888,7 @@ const GetStarted = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
-                      ID Proofs * (e.g., Passport, ID Card)
+                      ID Proofs * (e.g., ID Card, Driving License)
                     </label>
                     <div className="relative w-full p-4 bg-gray-100/60 dark:bg-gray-800/50 border border-dashed border-orange-300 rounded-lg hover:bg-gray-200/60 dark:hover:bg-gray-800/20 transition-all duration-300">
                       <input
@@ -917,7 +917,7 @@ const GetStarted = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
-                      Business Documents (e.g., Incorporation Certificate)
+                      Business Documents (e.g., Business Permit/License)
                     </label>
                     <div className="relative w-full p-4 bg-gray-100/60 dark:bg-gray-800/50 border border-dashed border-orange-300 rounded-lg hover:bg-gray-200/60 dark:hover:bg-gray-800/20 transition-all duration-300">
                       <input
