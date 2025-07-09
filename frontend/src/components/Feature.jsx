@@ -210,7 +210,7 @@ const Feature = () => {
           </p>
           <div className="flex justify-center gap-4">
             <motion.a
-              href="#business-signup"
+              href="/business"
               variants={{ hover: { scale: 1.05, boxShadow: '0 0 40px rgba(255, 165, 0, 0.5)' }, tap: { scale: 0.95 } }}
               whileHover="hover"
               whileTap="tap"
@@ -222,7 +222,7 @@ const Feature = () => {
               </span>
             </motion.a>
             <motion.a
-              href="#freelancer-signup"
+              href="/freelancer"
               variants={{ hover: { scale: 1.05, boxShadow: '0 0 40px rgba(255, 165, 0, 0.5)' }, tap: { scale: 0.95 } }}
               whileHover="hover"
               whileTap="tap"

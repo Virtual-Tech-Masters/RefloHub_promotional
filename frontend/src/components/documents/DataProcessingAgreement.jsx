@@ -171,7 +171,9 @@ const DataProcessingAgreement = () => {
         <p>Please get in touch if you have any queries or worries regarding this DPA or your data protection.</p>
         <p><strong>Officer of Data Protection</strong></p>
         <p><strong>Email:</strong> <a href="mailto:privacy@reflohubltd.com" class="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohubltd.com</a></p>
-        <p><strong>Address:</strong> [Insert Address]</p>
+        <p><strong>Address:</strong> Reflo Hub FZ LLC<br />
+          IFZA Business Park, DDP<br />
+          PO Box 342001, Dubai, United Arab Emirates</p>
       `,
     },
   ];

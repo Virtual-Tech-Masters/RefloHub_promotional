@@ -1,6 +1,5 @@
-
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Sparkles, Check, Shield, Globe, Star, BarChart, Coins, UserCheck, MessageSquare, CreditCard, TrendingUp } from 'lucide-react';
+import { ArrowRight, Sparkles, Check, Shield, Globe, Star, BarChart, Coins, UserCheck, MessageSquare, CreditCard, TrendingUp,CheckCircle } from 'lucide-react';
 import { useRef } from 'react';
 
 // Reusable Card Component
@@ -19,6 +18,23 @@ const Card = ({ title, description, icon: Icon, index, className = '' }) => (
 );
 
 const Freelancer = () => {
+    const categories = [
+    'Real Estate',
+    'Mortgage Brokers',
+    'Immigration Consultants',
+    'Legal Services',
+    'Website Development & Digital Marketing',
+    'Tours & Travel',
+    'Auto Sales and Parts',
+    'Home Services & HVAC',
+    'Tuition and Coaching Centres',
+    'Skincare & Beauty Clinics',
+    'Event Venues & Party Halls',
+    'Fencing and Landscaping',
+    'Concrete & Driveways',
+    'Insurance Providers',
+    'And More',
+  ];
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -105,7 +121,9 @@ const Freelancer = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Simply refer leads from your network to earn money! No selling, no cold calling, no closing deals. Choose from 50+ categories like real estate, education, finance, healthcare, and more. Get paid directly by businesses for successful referrals.
+              Simply refer leads from your network to earn money! No selling, no cold calling, no closing deals. Choose from 50+ high commision  categories like real estate, education, finance, healthcare, and more. 
+              <br /> 
+            No middlemen. No cuts. Freelancers keep 100% of what they earn.
             </motion.p>
 
             <motion.div
@@ -148,7 +166,7 @@ const Freelancer = () => {
             {[
               {
                 title: '✅ Simple, Stress-Free Income',
-                description: 'No cold calling, no selling, no closing. Choose from 50+ income categories—businesses take care of the rest; you just supply the leads.',
+                description: 'No cold calling, no selling, no closing. Choose from 50+ high commision income categories—businesses take care of the rest; you just supply the leads.',
               },
               {
                 title: '🌎 Local Simplicity, Global Opportunity',
@@ -206,6 +224,7 @@ const Freelancer = () => {
                 icon: TrendingUp,
                 title: '🚀 Virtual Tech Masters (VTM)',
                 description: 'Web development and digital marketing services',
+                url: 'https://www.virtualtechmasters.com/',
                 items: [
                   '10% recurring monthly commission for ongoing service packages',
                   'Ideal for freelancers with startup, small business, or entrepreneur connections',
@@ -215,6 +234,7 @@ const Freelancer = () => {
                 icon: Globe,
                 title: 'Tech Diamonds',
                 description: 'Web development and digital marketing services in India',
+                url: 'https://www.techdiamonds.net/',
                 items: [
                   '10% recurring monthly commission for ongoing service packages',
                   'Ideal for freelancers with startup, small business, or entrepreneur connections in India',
@@ -224,6 +244,7 @@ const Freelancer = () => {
                 icon: Globe,
                 title: '🌍 Fly Fares',
                 description: 'Comprehensive travel services',
+                url: 'https://flyfares.net/',
                 items: [
                   'Ongoing commissions for every travel service booked',
                   'Perfect for freelancers with corporate clients, families, or frequent travelers in their network',
@@ -242,7 +263,14 @@ const Freelancer = () => {
                   <div className="bg-orange-100 dark:bg-orange-900/50 p-2 rounded-lg mr-4">
                     <item.icon className="w-6 h-6 text-orange-300" aria-hidden="true" />
                   </div>
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl font-semibold hover:text-orange-400 transition-colors duration-200"
+                  >
+                    {item.title}
+                  </a>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{item.description}</p>
                 <ul className="space-y-3">
@@ -305,11 +333,11 @@ const Freelancer = () => {
               className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300/50 rounded-xl p-8 text-center relative"
             >
               <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 z-20 flex flex-col items-center pointer-events-none">
-                <span className="inline-flex items-center gap-1 px-4 py-2 rounded-full text-xs font-semibold bg-gradient-to-br from-sky-500/90 to-orange-300/90 text-white shadow-xl ring-2 ring-white dark:ring-gray-950 animate-bounce-slow">
+                <span className="inline-flex font-bold items-center gap-1 px-4 py-2 rounded-full text-xs bg-gradient-to-br from-sky-500/90 to-orange-300/90 text-white shadow-xl ring-2 ring-white dark:ring-gray-950 animate-bounce-slow">
                   <svg className="w-4 h-4 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path d="M12 2v2m6.364 1.636l-1.414 1.414M22 12h-2m-1.636 6.364l-1.414-1.414M12 22v-2m-6.364-1.636l1.414-1.414M2 12h2m1.636-6.364l1.414 1.414" />
                   </svg>
-                  30% OFF
+                  33% OFF
                 </span>
               </div>
 
@@ -318,7 +346,9 @@ const Freelancer = () => {
                 <span className="text-4xl font-bold">$9.99</span>
                 <span className="text-lg text-gray-600 dark:text-gray-300 ml-1">/month</span>
               </div>
-              <p className="text-sm text-orange-300 mb-6">33% OFF (was $14.99)</p>
+              <p className="text-md text-sky-500 mb-2 font-bold">(was $14.99) </p>
+              <p className="text-md text-orange-300 mb-6 font-bold">Limited Time Offer </p>
+
 
               <ul className="space-y-3 mb-8 text-left">
                 {[
@@ -345,7 +375,7 @@ const Freelancer = () => {
                 Get Started
               </motion.a>
 
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">Additional 30% discount for students with valid ID</p>
+              <p className="text-sm text-gray-500 font-bold dark:text-gray-400 mt-4">Additional <span className='text-sky-500 font-bold'>30%</span> discount for students with valid ID</p>
             </motion.div>
 
             <motion.div
@@ -353,7 +383,7 @@ const Freelancer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-8 text-center"
+              className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300 dark:border-white/10 rounded-xl p-8 text-center"
             >
               <h3 className="text-2xl font-bold mb-6">💰 Buy Extra Coins</h3>
 
@@ -362,8 +392,8 @@ const Freelancer = () => {
                   { price: '$5', coins: '10 coins' },
                   { price: '$10', coins: '20 coins' },
                 ].map((item, i) => (
-                  <div key={i} className="bg-gray-200/50 dark:bg-white/10 rounded-lg p-4">
-                    <div className="text-xl font-bold">{item.price}</div>
+                  <div key={i} className="border border-orange-300 dark:bg-white/10 rounded-lg p-4">
+                    <div className="text-xl font-bold mb-4">{item.price}</div>
                     <div className="text-gray-600 dark:text-gray-300">{item.coins}</div>
                   </div>
                 ))}
@@ -375,7 +405,7 @@ const Freelancer = () => {
                 aria-label="Purchase additional coins"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-block w-full bg-gray-200/60 dark:bg-white/10 hover:bg-gray-300/60 dark:hover:bg-white/20 border border-gray-300 dark:border-white/10 rounded-lg py-3 px-6 transition-colors duration-300"
+                className="inline-block w-full bg-gradient-to-r from-sky-500 to-orange-300 text-white mt-9 dark:bg-white/10 hover:bg-gray-300/60 dark:hover:bg-white/20 border border-gray-300 dark:border-white/10 rounded-lg py-3 px-6 transition-colors duration-300"
               >
                 Purchase Coins
               </motion.a>
@@ -395,17 +425,19 @@ const Freelancer = () => {
             🏅 50+ Top <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent">Niches</span> for Higher Income
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {[
-              { title: 'Real Estate', description: 'Higher commissions with high-value sales' },
-              { title: 'Immigration Services', description: 'High demand in international communities' },
-              { title: 'Mortgage-Loan', description: 'Get easy and fast mortgage or loan approvals with flexible terms to meet your financial needs.' },
-              { title: 'Digital Marketing', description: 'Recurring monthly revenue opportunities' },
-              { title: 'Travel Services', description: 'Consistent repeat business potential' },
-              { title: 'Legal Services', description: 'High-value professional referrals' },
-              { title: 'Many more', description: 'Explore 50+ categories for diverse income streams' },
-            ].map((item, index) => (
-              <Card key={index} title={item.title} description={item.description} index={index} />
+           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {categories.map((category, index) => (
+              <motion.div
+                key={category}
+                className="p-4 bg-gray-100/60 dark:bg-gray-800/50 rounded-lg flex items-center gap-3 border border-sky-500/20 dark:border-sky-400/20"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(14,165,233,0.5)' }}
+              >
+                <CheckCircle className="w-5 h-5 text-sky-500" />
+                <span className="text-gray-900 dark:text-white">{category}</span>
+              </motion.div>
             ))}
           </div>
         </section>
@@ -472,8 +504,7 @@ const Freelancer = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.a
-                href="/signup"
-                target="_blank"
+                href="/get-started"
                 rel="noopener noreferrer"
                 role="button"
                 aria-label="Sign up as a freelancer"
@@ -495,7 +526,7 @@ const Freelancer = () => {
                 role="button"
                 aria-label="Contact support for help"
                 whileHover={{ y: -3 }}
-                className="group relative inline-flex px-8 py-4 bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white rounded-xl font-semibold text-lg hover:bg-gray-200/60 dark:hover:bg-white/10 transition-all duration-300 overflow-hidden"
+                className="group relative inline-flex px-8 py-4 bg-gradient-to-r from-sky-500 to-orange-300  dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 text-white dark:text-white rounded-xl font-semibold text-lg hover:bg-gray-200/60 dark:hover:bg-white/10 transition-all duration-300 overflow-hidden"
               >
                 <span className="relative z-10 flex items-center">Need Help Getting Started?</span>
               </motion.a>

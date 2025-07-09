@@ -14,7 +14,7 @@ const About = () => {
   const features = [
     { icon: Zap, title: 'Zero Commission', desc: 'A straightforward subscription fee ensures consistent and equitable pricing.' },
     { icon: Globe, title: 'Global Reach', desc: 'Submit leads across cities, states, and nations for global impact.' },
-    { icon: Shield, title: 'Transparent Payments', desc: 'Direct payments to freelancers with no middleman or hidden costs.' },
+    { icon: Shield, title: 'Transparent Payments', desc: 'Direct payments to freelancers with no middleman or no cuts and keep 100% earnings.' },
     { icon: Users, title: 'Verified Trust', desc: 'Live-photo KYC verification ensures a safe and reliable platform.' },
   ];
 
@@ -30,7 +30,9 @@ const About = () => {
     { title: 'Anti-fraud Tools', desc: 'Dispute resolution, IP logging, and live photo verification.' },
     { title: 'Coin-based Submission', desc: 'Simplifies lead management for freelancers.' },
     { title: 'Campaign Promotion', desc: 'Targeted ads to boost business visibility.' },
+    { title: 'Lock in your territory', desc: 'secure city-wide exclusivity and be the only business in your niche to receive leads from Reflo Hub.' },
   ];
+ 
 
   const values = [
     { title: 'Integrity', desc: 'Open communication and transparent policies.' },
@@ -94,14 +96,21 @@ const About = () => {
           <h2 className="text-3xl font-bold text-center mb-8">🚀 Our Story</h2>
           <div className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-8">
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-              Reflo Hub was founded on a single, potent principle: referrals have to be straightforward, universal, and equitable...
-            </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-              We created Reflo Hub as a software solution...
+              Reflo Hub was founded on a single, potent principle: referrals have to be straightforward,
+              universal, and equitable. We were founded in UAE with the goal of transforming the lead
+              generation sector by providing a transparent, commission-free SaaS platform that equitably
+              enables enterprises and independent contractors.
+
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              Today, we are pleased to assist customers across a variety of industries...
+              We created Reflo Hub as a software solution since we were fed up with commission-heavy
+              models and limited global reach. This technology enables businesses to expand without risk
+              and freelancers to make money without selling.
+              Today, we are pleased to assist customers across a variety of industries, offering businesses a
+              consistent flow of validated, high-quality leads and assisting freelancers in making money off of
+              their networks
             </p>
+
           </div>
         </motion.section>
 
@@ -116,7 +125,9 @@ const About = () => {
                 <Globe className="w-6 h-6 text-orange-400" /> Our Mission
               </h3>
               <p className="text-gray-700 dark:text-gray-300">
-                To provide the most transparent, globally scalable referral lead exchange platform...
+
+To provide the most transparent, globally scalable referral lead exchange platform that creates genuine value for freelancers and businesses—without commission or geographic limits. Reflo Hub aims to revolutionise lead generation through fairness, simplicity, and trust. We help companies grow their clientele and freelancers turn relationships into steady income.
+
               </p>
             </motion.div>
             <motion.div
@@ -128,7 +139,11 @@ const About = () => {
                 <Sparkles className="w-6 h-6 text-sky-400" /> Our Vision
               </h3>
               <p className="text-gray-700 dark:text-gray-300">
-                Become the world's leading SaaS referral ecosystem...
+                Become the world's leading SaaS referral ecosystem—where everyone benefits, everyone
+                earns, and everyone trusts.
+                Our goal is to make Reflo Hub the go-to worldwide platform for freelancing referrals,
+                establishing new benchmarks for openness, safety, and cooperation.
+
               </p>
             </motion.div>
           </div>
@@ -204,10 +219,10 @@ const About = () => {
         </motion.section>
 
         <motion.section className="mb-20" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-bold text-center mb-8">📍 Serving the World from Dubai</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">📍 Serving the World from UAE</h2>
           <div className="bg-gradient-to-r from-sky-200/30 dark:from-sky-500/10 to-orange-200/30 dark:to-orange-400/10 border border-gray-200 dark:border-white/10 rounded-xl p-8 text-center">
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              Reflo Hub operates under open, business-friendly policies...
+             Reflo Hub Ltd operates under the UAE’s open, business-friendly policies and is proudly based in the Emirates. Our SaaS architecture enables seamless operations across 100+ countries while ensuring full global compliance.
             </p>
           </div>
         </motion.section>
@@ -221,7 +236,7 @@ const About = () => {
           <h2 className="text-3xl font-bold text-center mb-8">📈 Our Dedication to Development</h2>
           <div className="bg-gradient-to-r from-sky-200/30 dark:from-sky-500/10 to-orange-200/30 dark:to-orange-400/10 border border-gray-200 dark:border-white/10 rounded-xl p-8 text-center">
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              We're dedicated to continuously developing and expanding...
+              We're committed to continuous growth and innovation, driven by feedback from both businesses and freelancers. Upcoming features include advanced analytics, smart ad targeting, performance dashboards, and streamlined lead tracking to better serve the needs of our users.
             </p>
           </div>
         </motion.section>

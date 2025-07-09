@@ -26,11 +26,10 @@ const Button = ({ href, children, gradient = false, ariaLabel, className = '' })
     aria-label={ariaLabel}
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
-    className={`inline-block w-full text-center font-medium rounded-lg py-3 px-6 transition-all duration-300 ${
-      gradient
-        ? 'bg-gradient-to-r from-sky-500 to-orange-300 text-white hover:shadow-lg hover:shadow-orange-300/20'
-        : 'bg-gray-100/60 dark:bg-white/5 hover:bg-gray-200/60 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10'
-    } ${className}`}
+    className={`inline-block w-full text-center font-medium rounded-lg py-3 px-6 transition-all duration-300 ${gradient
+      ? 'bg-gradient-to-r from-sky-500 to-orange-300 text-white hover:shadow-lg hover:shadow-orange-300/20'
+      : 'bg-gray-100/60 dark:bg-white/5 hover:bg-gray-200/60 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10'
+      } ${className}`}
   >
     {children}
   </motion.a>
@@ -260,10 +259,8 @@ const Business = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Your category not listed?{' '}
-            <a href="mailto:support@reflohub.com" className="text-orange-300 hover:underline" aria-label="Contact support for unlisted categories">
-              Reach out to us!
-            </a>
+            View All Categories on our <a href="/all-categories" className="text-orange-300 hover:underline" aria-label="View all categories">All Categories</a> page.
+            
           </motion.p>
         </section>
 
@@ -279,12 +276,14 @@ const Business = () => {
             📊 How Reflo Hub <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent">Benefits Your Company</span>
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               { title: '1️⃣ Easy Registration', description: 'Fill out a brief registration with live photo verification to prevent fraud.' },
               { title: '2️⃣ Simple Lead Administration', description: 'Freelancers submit leads directly via the dashboard. Review leads with full contact details instantly.' },
               { title: '3️⃣ Closing Deals and Paying Directly', description: 'Contact leads and close deals independently. Pay freelancers directly with no platform fees.' },
               { title: '4️⃣ Monitor and Scale', description: 'Track leads and conversions via your dashboard. Negotiate commissions privately and scale with flexible marketing campaigns.' },
+              { title: '5️⃣ Lock in your territory', description: 'secure city-wide exclusivity and be the only business in your niche to receive leads from Reflo Hub.' },
+              { title: '6️⃣ Zero Risk', description: 'If you receive zero customers in a quarter, we cover one month of basic ad services via our partner Virtual Tech Masters—on us.' },
             ].map((item, index) => (
               <Card key={index} title={item.title} description={item.description} index={index} className="text-center" />
             ))}
@@ -313,47 +312,71 @@ const Business = () => {
             Transparent, predictable pricing with no hidden fees. Choose your plan:
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
-                region: 'USA, CAN, AUS, UK',
-                title: 'Business Premium',
+                region: 'World Wide',
+                title: 'Business Basic',
+                description: 'Perfect for growing businesses',
+                price: '$79/month',
+                discount: '33% off (was $129)',
+                setup: '$249 (was $599)',
+                features: ['15 Leads/Month', '5 Free Monthly Ads', 'Dashboard Analytics'],
+                gradient: true,
+                cardNumber: 1
+              },
+              {
+                region: 'World Wide',
+                title: 'Business Standard',
                 description: 'Ideal for high-growth businesses',
-                price: '$99',
-                discount: '50% off (was $149)',
+                price: '$99/month',
+                discount: '33% off (was $149)',
                 setup: '$349 (was $699)',
                 features: ['Unlimited Leads', '10 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
                 gradient: true,
+                cardNumber: 1
               },
               {
-                region: 'USA, CAN, AUS, UK',
-                title: 'Business Standard',
-                description: 'Perfect for growing businesses',
-                price: '$79',
-                discount: '50% off (was $129)',
-                setup: '$249 (was $599)',
+                region: 'World Wide',
+                title: 'Business Premium',
+                description: 'Lock in your territory with exclusive leads',
+                price: 'Price on request',
+                features: ['Unlimited Leads', 'Exclusivity city-wide', '25 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
+                gradient: true,
+                cardNumber: 3
+              },
+
+              {
+                region: 'India',
+                title: 'Business Basic',
+                description: 'Perfect for growing businesses in India',
+                price: '$25/month',
+                discount: '33% off (was $50)',
+                setup: '$99 (was $199)',
                 features: ['15 Leads/Month', '5 Free Monthly Ads', 'Dashboard Analytics'],
-                gradient: false,
+                gradient: true,
+                cardNumber: 1
               },
               {
                 region: 'India',
-                title: 'Business Plan 2',
+                title: 'Business Standard',
                 description: 'Ideal for high-growth businesses in India',
-                price: '$39',
-                discount: '50% off (was $79)',
+                price: '$39/month',
+                discount: '33% off (was $79)',
                 setup: '$129 (was $269)',
                 features: ['Unlimited Leads', '10 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
                 gradient: true,
+                cardNumber: 1
+
               },
               {
                 region: 'India',
-                title: 'Business Plan 1',
-                description: 'Perfect for growing businesses in India',
-                price: '$25',
-                discount: '50% off (was $50)',
-                setup: '$99 (was $199)',
-                features: ['15 Leads/Month', '5 Free Monthly Ads', 'Dashboard Analytics'],
-                gradient: false,
+                title: 'Business Premium',
+                description: 'Lock in your territory with exclusive leads',
+                price: 'Price on request',
+                features: ['Unlimited Leads', 'Exclusivity city-wide', '25 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
+                gradient: true,
+                cardNumber: 6
               },
             ].map((plan, index) => (
               <motion.div
@@ -363,10 +386,22 @@ const Business = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
-                className={`bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border ${
-                  plan.gradient ? 'border-orange-300/50' : 'border-gray-200 dark:border-white/10'
-                } rounded-xl p-8 flex flex-col relative`}
+                className={`bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border ${plan.gradient ? 'border-orange-300/50' : 'border-gray-200 dark:border-white/10'
+                  } rounded-xl p-8 flex flex-col relative`}
               >
+                {
+                  plan.cardNumber === 1 ? (
+                   <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 z-20 flex flex-col items-center pointer-events-none">
+                  <span className="inline-flex font-bold items-center gap-1 px-4 py-2 rounded-full text-xs bg-gradient-to-br from-sky-500/90 to-orange-300/90 text-white shadow-xl ring-2 ring-white dark:ring-gray-950 animate-bounce-slow">
+                    <svg className="w-4 h-4 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path d="M12 2v2m6.364 1.636l-1.414 1.414M22 12h-2m-1.636 6.364l-1.414-1.414M12 22v-2m-6.364-1.636l1.414-1.414M2 12h2m1.636-6.364l1.414 1.414" />
+                    </svg>
+                    33% OFF
+                  </span>
+                </div>
+                  ) : null
+
+                }
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-300 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">
                   {plan.region}
                 </div>
@@ -375,10 +410,10 @@ const Business = () => {
                   <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{plan.description}</p>
                   <div className="flex items-end mb-2">
                     <span className="text-4xl font-bold">{plan.price}</span>
-                    <span className="text-gray-600 dark:text-gray-300 ml-1">/month (USD)</span>
+                    {/* <span className="text-gray-600 dark:text-gray-300 ml-1">/month </span> */}
                   </div>
-                  <p className="text-sm text-orange-300 mb-2">{plan.discount}</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">One-time setup: {plan.setup}</p>
+                  <p className="text-md text-orange-300 mb-2 font-bold">{plan.discount}</p>
+                  <p className="text-md text-gray-600 dark:text-gray-300 mb-4 font-bold">One-time setup: {plan.setup}</p>
                   <div className="h-px bg-gray-200 dark:bg-white/10 my-4"></div>
                 </div>
                 <ul className="space-y-3 flex-1">
@@ -414,7 +449,7 @@ const Business = () => {
                 <motion.div
                   key={index}
                   whileHover={{ y: -5 }}
-                  className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 text-center"
+                  className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300 dark:border-white/10 rounded-xl p-6 text-center"
                 >
                   <div className="text-2xl font-bold mb-1">{ad.title}</div>
                   <div className="text-xl font-semibold mb-2">{ad.price}</div>
@@ -423,7 +458,7 @@ const Business = () => {
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     aria-label={`Purchase ${ad.title}`}
-                    className="w-full py-2 rounded-lg bg-gray-100/60 dark:bg-white/10 hover:bg-gray-200/60 dark:hover:bg-white/20 border border-gray-200 dark:border-white/10"
+                    className="w-full py-2 rounded-lg bg-gradient-to-r from-sky-500 to-orange-300 dark:bg-white/10 hover:bg-gray-200/60 dark:hover:bg-white/20 border border-gray-200 dark:border-white/10"
                   >
                     Purchase
                   </motion.button>
@@ -442,14 +477,14 @@ const Business = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
             whileHover={{ y: -10 }}
-            className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-8 flex flex-col max-w-4xl mx-auto"
+            className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-500 dark:border-white/10 rounded-xl p-8 flex flex-col max-w-4xl mx-auto"
           >
             <div className="mb-6">
               <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Verified Business Badge</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Enhance your profile credibility</p>
               <div className="flex items-end mb-4">
                 <span className="text-4xl font-bold">$25.00</span>
-                <span className="text-gray-600 dark:text-gray-300 ml-1">/month (USD)</span>
+                <span className="text-gray-600 dark:text-gray-300 ml-1">/month </span>
               </div>
               <div className="h-px bg-gray-200 dark:bg-white/10 my-4"></div>
             </div>
@@ -461,7 +496,7 @@ const Business = () => {
                 </li>
               ))}
             </ul>
-            <Button href="/get-started" ariaLabel="Add Verified Business Badge" className="mt-8">
+            <Button href="/get-started" ariaLabel="Add Verified Business Badge" className="mt-8 bg-gradient-to-r from-sky-500 to-orange-300 text-white hover:shadow-lg hover:shadow-orange-300/20">
               Add Badge
             </Button>
           </motion.div>
@@ -533,6 +568,7 @@ const Business = () => {
               { title: 'Exclusive Listings', description: 'Only 3-4 businesses per city or category.' },
               { title: 'Ensured High-Quality Leads', description: 'Motivated, pre-screened recommendations.' },
               { title: 'Maximum ROI', description: 'Lower advertising costs with predictable monthly fees.' },
+              { title: 'Lock in your territory', description: 'secure city-wide exclusivity and be the only business in your niche to receive leads from Reflo Hub.' },
             ].map((item, index) => (
               <Card key={index} title={item.title} description={item.description} index={index} className="text-center" />
             ))}

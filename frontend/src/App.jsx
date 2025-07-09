@@ -30,6 +30,8 @@ import Cookies from './components/Cookies';
 import Document from './components/Document';
 import Career from './components/Career';
 import Feature from './components/Feature';
+import AllCategoryPage from './components/ui/AllCategoryPage';
+import Pricing from './components/Pricing';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -122,6 +124,26 @@ function App() {
                 element={
                   <main>
                     <GetStarted />
+                    <Footer />
+                    <BackToTop />
+                  </main>
+                }
+              />
+              <Route
+                path="/all-categories"
+                element={
+                  <main>
+                    <AllCategoryPage />
+                    <Footer />
+                    <BackToTop />
+                  </main>
+                }
+              />
+              <Route 
+                path="/pricing"
+                element={
+                  <main>
+                    <Pricing />
                     <Footer />
                     <BackToTop />
                   </main>
@@ -238,7 +260,7 @@ function App() {
                 }
               />
               <Route
-                path="/documents"
+                path="/data-policies"
                 element={
                   <main>
                     <Document />

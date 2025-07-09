@@ -58,13 +58,15 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12"
+            className="text-xl md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Connect freelancers with businesses in a revolutionary lead-sharing ecosystem. 
-            Submit leads, earn commissions, and scale your business like never before.
+            Revolutionizing Referrals: Empowering Freelancers to Fuel Business Growth.
+            <br />
+            Turn connections into cash. Share leads, earn instantly, and help businesses thrive — no cuts, no middlemen. Keep everything you make.
+
           </motion.p>
 
           <motion.div
@@ -75,9 +77,9 @@ const Hero = () => {
           >
             <a href="/freelancer">
               <motion.button
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: '0 0 40px rgba(255, 165, 0, 0.4)' 
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: '0 0 40px rgba(255, 165, 0, 0.4)'
                 }}
                 whileTap={{ scale: 0.95 }}
                 className="group relative px-8 py-4 bg-gradient-to-r from-sky-500 to-orange-300 text-white rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
@@ -92,13 +94,13 @@ const Hero = () => {
 
             <a href="/business">
               <motion.button
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  boxShadow: '0 0 40px rgba(30, 64, 175, 0.3)' 
+                  boxShadow: '0 0 40px rgba(30, 64, 175, 0.3)'
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="group px-8 py-4 bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/20 text-gray-900 dark:text-white rounded-xl font-semibold text-lg hover:border-sky-500/50 dark:hover:border-sky-400/50 transition-all duration-300"
+                className="group px-8 py-4 bg-gradient-to-r from-orange-300 to-sky-500 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/20 text-white dark:text-white rounded-xl font-semibold text-lg hover:border-sky-500/50 dark:hover:border-sky-400/50 transition-all duration-300"
               >
                 <span className="flex items-center">
                   Join as Business

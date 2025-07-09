@@ -9,22 +9,22 @@ const Copyright = () => {
     {
       title: 'Introduction',
       content: `
-        <p>Welcome to the "Site" that is Reflo Hub Ltd. Our rights with regard to intellectual property (IP) and the safeguarding of content on our platform are spelled out in detail in our copyright policy. You confirm that you have read and will abide by this policy by using Reflo Hub Ltd.</p>
+        <p>Welcome to the "Site" that is Reflo Hub. Our rights with regard to intellectual property (IP) and the safeguarding of content on our platform are spelled out in detail in our copyright policy. You confirm that you have read and will abide by this policy by using Reflo Hub.</p>
       `,
     },
     {
       title: 'Ownership of Copyright',
       content: `
-        <p>International copyright and intellectual property laws protect all content displayed or made available through Reflo Hub Ltd., including but not limited to text, images, graphics, logos, software code, platform design, user interfaces, databases, and downloadable materials ("Content"). Reflo Hub Ltd., its licensors, or designated third-party content providers are the sole owners of this content.</p>
+        <p>International copyright and intellectual property laws protect all content displayed or made available through Reflo Hub, including but not limited to text, images, graphics, logos, software code, platform design, user interfaces, databases, and downloadable materials ("Content"). Reflo Hub, its licensors, or designated third-party content providers are the sole owners of this content.</p>
       `,
     },
     {
       title: 'Permitted Use',
       content: `
-        <p>Reflo Hub Ltd. users are allowed to:</p>
+        <p>Reflo Hub. users are allowed to:</p>
         <ul class="list-disc pl-5 space-y-2">
           <li>The content may be viewed and used for non-commercial, personal purposes.</li>
-          <li>As long as all copyright notices and trademarks are upheld, you may download or print documents for your own use or in relation to Reflo Hub Ltd.'s services.</li>
+          <li>As long as all copyright notices and trademarks are upheld, you may download or print documents for your own use or in relation to Reflo Hub.'s services.</li>
         </ul>
         <p>No more licenses or rights are given, either expressly or implicitly.</p>
       `,
@@ -34,10 +34,10 @@ const Copyright = () => {
       content: `
         <p>You are specifically not allowed to:</p>
         <ul class="list-disc pl-5 space-y-2">
-          <li>Redistributing or republishing any content, in whole or in part, without Reflo Hub Ltd.'s full written approval.</li>
+          <li>Redistributing or republishing any content, in whole or in part, without Reflo Hub.'s full written approval.</li>
           <li>Copying, changing, or adapting our work for profit or for distribution, publication, or public display.</li>
           <li>Reproducing or extracting content from the platform by automated bots, data mining, scraping, or other methods.</li>
-          <li>Using Reflo Hub Ltd.'s proprietary technology, structure, or content to create derivative works or services without express consent.</li>
+          <li>Using Reflo Hub.'s proprietary technology, structure, or content to create derivative works or services without express consent.</li>
           <li>Eliminating or changing any trademarks, proprietary rights indications, or copyright notices.</li>
         </ul>
       `,
@@ -45,20 +45,20 @@ const Copyright = () => {
     {
       title: 'Notice of Trademarks',
       content: `
-        <p>Reflo Hub Ltd is the only owner of all registered and unregistered trademarks pertaining to the names "Reflo Hub Ltd", "PayPerRef", and any associated logos, designs, graphics, slogans, and trade names that are shown on the website. It is extremely forbidden to use these trademarks without permission.</p>
+        <p>Reflo Hub is the only owner of all registered and unregistered trademarks pertaining to the names "Reflo Hub", "PayPerRef", and any associated logos, designs, graphics, slogans, and trade names that are shown on the website. It is extremely forbidden to use these trademarks without permission.</p>
       `,
     },
     {
       title: 'User-generated Content',
       content: `
-        <p>Content, including text, images, reviews, comments, and communications, can be uploaded or submitted by users ("User Content"). In addition to granting Reflo Hub Ltd a non-exclusive, royalty-free licence to use, reproduce, adapt, and publicly display such user content within the platform and related promotional activities, users guarantee that they own or control all rights to such user content.</p>
-        <p>Users agree to hold Reflo Hub Ltd harmless from any claims resulting from alleged infringement of their contributed user content.</p>
+        <p>Content, including text, images, reviews, comments, and communications, can be uploaded or submitted by users ("User Content"). In addition to granting Reflo Hub a non-exclusive, royalty-free licence to use, reproduce, adapt, and publicly display such user content within the platform and related promotional activities, users guarantee that they own or control all rights to such user content.</p>
+        <p>Users agree to hold Reflo Hub harmless from any claims resulting from alleged infringement of their contributed user content.</p>
       `,
     },
     {
       title: 'Reporting Copyright Infringement (DMCA/Notice)',
       content: `
-        <p>Intellectual property rights are respected by Reflo Hub Ltd. Please contact us straight away at: <a href="mailto:legal@reflohubltd.com" class="text-orange-400 dark:text-orange-300 hover:underline">legal@reflohubltd.com</a> if you think your copyrighted material has been misused or violated on our site.</p>
+        <p>Intellectual property rights are respected by Reflo Hub. Please contact us straight away at: <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a> if you think your copyrighted material has been misused or violated on our site.</p>
         <p>You must include the following in your notification:</p>
         <ul class="list-disc pl-5 space-y-2">
           <li>Identification of the allegedly infringed copyrighted work.</li>
@@ -87,27 +87,29 @@ const Copyright = () => {
     {
       title: 'Warranty Disclaimer',
       content: `
-        <p>All content on Reflo Hub Ltd. is provided "as is" and "as available" only. The information and resources on this website are not guaranteed to be correct, comprehensive, dependable, up-to-date, or error-free.</p>
+        <p>All content on Reflo Hub. is provided "as is" and "as available" only. The information and resources on this website are not guaranteed to be correct, comprehensive, dependable, up-to-date, or error-free.</p>
       `,
     },
     {
       title: 'Liability Limitations',
       content: `
-        <p>Even if informed of the potential for such damages, Reflo Hub Ltd., its directors, employees, affiliates, or partners will never be held responsible for indirect, special, incidental, or consequential damages resulting from the use or inability to utilize the materials on this platform.</p>
+        <p>Even if informed of the potential for such damages, Reflo Hub., its directors, employees, affiliates, or partners will never be held responsible for indirect, special, incidental, or consequential damages resulting from the use or inability to utilize the materials on this platform.</p>
       `,
     },
     {
       title: 'Amendments and Updates',
       content: `
-        <p>This copyright policy may be changed at any time and without previous notification by Reflo Hub Ltd. On this page, updates will be prominently displayed. Regular review of this page is encouraged.</p>
+        <p>This copyright policy may be changed at any time and without previous notification by Reflo Hub. On this page, updates will be prominently displayed. Regular review of this page is encouraged.</p>
       `,
     },
     {
       title: 'Contact Information',
       content: `
         <p>For questions about this copyright policy, get in touch with:</p>
-        <p><strong>Email:</strong> <a href="mailto:legal@reflohubltd.com" class="text-orange-400 dark:text-orange-300 hover:underline">legal@reflohubltd.com</a></p>
-        <p><strong>Address:</strong> [Enter Your Business Address in Canada]</p>
+        <p><strong>Email:</strong> <a href="mailto:support@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">support@reflohub.com</a></p>
+        <p><strong>Address:</strong> IFZA Business Park, Dubai Digital Park (DDP)
+PO Box 342001, Dubai, United Arab Emirates
+Email: privacy@reflohub.com</p>
       `,
     },
   ];
@@ -167,7 +169,7 @@ const Copyright = () => {
             Copyright Policy
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Welcome to Reflo Hub Ltd. This policy outlines our rights regarding intellectual property and the protection of content on our platform.
+            Welcome to Reflo Hub. This policy outlines our rights regarding intellectual property and the protection of content on our platform.
           </p>
         </motion.div>
 
@@ -217,7 +219,7 @@ const Copyright = () => {
             Contact our support team for any inquiries about our copyright policy.
           </p>
           <motion.a
-            href="mailto:legal@reflohubltd.com"
+            href="mailto:privacy@reflohub.com"
             variants={{ hover: { scale: 1.05, boxShadow: '0 0 40px rgba(255, 165, 0, 0.5)' }, tap: { scale: 0.95 } }}
             whileHover="hover"
             whileTap="tap"
@@ -232,14 +234,14 @@ const Copyright = () => {
 
         {/* SEO Metadata */}
         <motion.div className="hidden">
-          <meta name="title" content="Reflo Hub Ltd – Copyright Policy" />
+          <meta name="title" content="Reflo Hub – Copyright Policy" />
           <meta
             name="description"
-            content="Review the copyright policy for Reflo Hub Ltd, outlining intellectual property rights, permitted use, and procedures for reporting infringement."
+            content="Review the copyright policy for Reflo Hub, outlining intellectual property rights, permitted use, and procedures for reporting infringement."
           />
           <meta
             name="keywords"
-            content="Reflo Hub Ltd copyright policy, intellectual property, DMCA notice, user-generated content, trademark protection, SaaS platform copyright"
+            content="Reflo Hub copyright policy, intellectual property, DMCA notice, user-generated content, trademark protection, SaaS platform copyright"
           />
         </motion.div>
       </div>

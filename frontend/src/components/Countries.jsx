@@ -41,16 +41,19 @@ const Countries = () => {
               We're actively working to bring Reflo Hub to more countries. 
               Join our waitlist to be notified when we launch in your region.
             </p>
-            <motion.button
+            <a href="/contact">
+             <motion.button
               whileHover={{ 
                 scale: 1.05, 
-                boxShadow: '0 0 30px rgba(14,165,233,0.4)' // sky-500 glow
+                boxShadow: '0 0 30px rgba(14,165,233,0.4)' ,
               }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-gradient-to-r from-sky-500 to-orange-400 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-200"
             >
               Join Waitlist
             </motion.button>
+            </a>
+           
           </div>
         </motion.div>
       </div>

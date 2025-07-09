@@ -4,7 +4,7 @@ import { Zap, Mail, Twitter, Linkedin, Github, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   const companyLinks = [
-    { label: 'About Us' },
+    { label: 'About' },
     { label: 'Career' },
     { label: 'Contact' },
     { label: 'Blog' },
@@ -13,19 +13,17 @@ const Footer = () => {
   const productLinks = [
     { label: 'Features' },
     { label: 'Pricing' },
-    { label: 'API' },
-    { label: 'Integrations' },
+
   ];
 
   const legalLinks = [
     { label: 'Business Registration Consent' },
     { label: 'Freelancer Registration Consent' },
-    { label: 'Data Processing Agreement' },
     { label: 'Nondiscrimination Statement' },
     { label: 'Privacy Policy' },
     { label: 'Terms and Conditions' },
     { label: 'Cookies' },
-    { label: 'Documents' },
+    { label: 'Data-Policies' },
   ];
 
   const socialLinks = [

@@ -143,8 +143,10 @@ const PrivacyPolicy = () => {
         <p>Questions or concerns? We’re here to help.</p>
         <p><strong>Reflo Hub Privacy Team</strong></p>
         <p><strong>Email:</strong> <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a></p>
-        <p><strong>Address:</strong> [Your business address], Canada</p>
-        <p><strong>Phone:</strong> [Your contact number]</p>
+        <p><strong>Address:</strong> Reflo Hub FZ LLC<br />
+          IFZA Business Park, DDP<br />
+          PO Box 342001, Dubai, United Arab Emirates</p>
+        <p><strong>Phone:</strong>1-855-220-0505</p>
       `,
     },
   ];

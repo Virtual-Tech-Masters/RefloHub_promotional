@@ -12,7 +12,7 @@ const TermsAndConditions = () => {
         <p><strong>Reflo Hub FZ LLC</strong></p>
         <p>IFZA Business Park, (DDP)</p>
         <p>PO Box 342001, Dubai, United Arab Emirates</p>
-        <p><strong>Email:</strong> <a href="mailto:legal@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">legal@reflohub.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">legal@reflohub.com</a></p>
         <p><strong>Tel:</strong> 1-855-220-0505</p>
         <p>Reflo Hub is incorporated as a private limited company under the Dubai Integrated Economic Zones Implementing Regulations 2023. We do not maintain an establishment or appointed representative in the EU/EEA, Canada, or the United States.</p>
       `,
@@ -181,7 +181,7 @@ const TermsAndConditions = () => {
         <p>Reflo Hub FZ LLC</p>
         <p>IFZA Business Park, DDP</p>
         <p>PO Box 342001, Dubai, United Arab Emirates</p>
-        <p><strong>Email:</strong> <a href="mailto:legal@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">legal@reflohub.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:support@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">support@reflohub.com</a></p>
         <p><strong>Tel:</strong> 1-855-220-0505</p>
       `,
     },
@@ -292,7 +292,7 @@ const TermsAndConditions = () => {
             Contact our support team for any inquiries about our terms and conditions.
           </p>
           <motion.a
-            href="mailto:legal@reflohub.com"
+            href="mailto:support@reflohub.com"
             variants={{ hover: { scale: 1.05, boxShadow: '0 0 40px rgba(255, 165, 0, 0.5)' }, tap: { scale: 0.95 } }}
             whileHover="hover"
             whileTap="tap"

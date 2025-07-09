@@ -6,7 +6,7 @@ const HowItWorks = () => {
     {
       icon: Search,
       title: 'Find Opportunities',
-      description: 'Browse available lead opportunities in 50+ categories in your network.',
+      description: 'Browse available lead opportunities in 50+ High commision categories in your network.',
     },
     {
       icon: Target,
@@ -15,7 +15,7 @@ const HowItWorks = () => {
     },
     {
       icon: DollarSign,
-      title: 'Earn Commissions',
+      title: 'Earn 100% Commissions',
       description: 'Get paid when businesses successfully convert your leads.',
     },
   ];

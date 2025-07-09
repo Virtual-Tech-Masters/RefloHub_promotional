@@ -1,219 +1,365 @@
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 const Pricing = () => {
-  const freelancerPlan = {
-    name: 'Freelancer',
-    price: 14.99,
-    features: [
-      'Dashboard access',
-      '5 coins per month for lead submissions',
-      'Submit leads globally',
-      'Real-time photo verification',
-      'Internal chat & agreement templates',
-    ],
-    coinOptions: [
-      { coins: 10, price: 5 },
-      { coins: 14, price: 7 },
-      { coins: 20, price: 10 },
-    ],
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
   };
+
+  const cardVariants = {
+    hover: { scale: 1.05, boxShadow: '0 0 30px rgba(255, 165, 0, 0.3)' },
+  };
+
+  const freelancerPlans = [
+    {
+      name: 'Freelancer Core',
+      price: '$9.99 / month',
+      features: [
+        '5 free Lead Coins each month',
+        'Instant payouts to PayPal, Stripe, or bank',
+        'Access to all industries & territories',
+        'Learning Hub courses + community leaderboard',
+      ],
+    },
+  ];
+
+  const coinPacks = [
+    { name: '10 Coin Pack', price: '$5 one time', value: '$0.50 per coin' },
+    { name: '20 Coin Pack', price: '$10 one time', value: '$0.50 per coin' },
+  ];
 
   const businessPlans = [
     {
       name: 'Basic',
-      setupFee: 399,
-      monthlyFee: 99,
-      features: [
-        '10 leads per month',
-        '5 free ad campaigns per month',
-        '3–4 businesses per category/city',
-        'Real-time photo verification',
-        'Lead tracking & analytics',
-      ],
+      setup: '$249',
+      monthly: '$79',
+      bestFor: 'Start ups & local SMBs launching their first referral campaign',
+      features: {
+        campaignSlots: '3',
+        referralFee: true,
+        aiLead: true,
+        apiCrm: false,
+        customerSuccess: false,
+        cityMonopoly: false,
+        strategyCall: false,
+        growthGuarantee: true,
+      },
+    },
+    {
+      name: 'Standard',
+      setup: '$349',
+      monthly: '$99',
+      bestFor: 'Growing teams managing multiple products or territories',
+      features: {
+        campaignSlots: '10',
+        referralFee: true,
+        aiLead: true,
+        apiCrm: true,
+        customerSuccess: false,
+        cityMonopoly: false,
+        strategyCall: true,
+        growthGuarantee: true,
+      },
     },
     {
       name: 'Premium',
-      setupFee: 599,
-      monthlyFee: 149,
-      features: [
-        'Unlimited leads',
-        '10 free ad campaigns per month',
-        '3–4 businesses per category/city',
-        'Real-time photo verification',
-        'Lead tracking & analytics',
-      ],
+      setup: 'On call',
+      monthly: 'On call',
+      bestFor: 'Market leaders who want exclusive category rights in their city*',
+      features: {
+        campaignSlots: 'Unlimited',
+        referralFee: true,
+        aiLead: true,
+        apiCrm: true,
+        customerSuccess: true,
+        cityMonopoly: true,
+        strategyCall: true,
+        growthGuarantee: true,
+      },
     },
   ];
 
-  const adCampaigns = [
-    { scope: 'Home State/Province', cost: '$5/week' },
-    { scope: 'Additional State/Province', cost: '$2/week each' },
-    { scope: 'Nationwide', cost: '$15/week' },
+  const faqs = [
+    {
+      question: 'Can I cancel any time?',
+      answer: 'Yes. Subscriptions are month to month after the one time setup fee. Cancel from your dashboard with no hidden penalties.',
+    },
+    {
+      question: 'Are there additional transaction fees?',
+      answer: 'No. Businesses only pay the referral fees they set. Reflo Hub does not skim commissions or charge payment processing spreads.',
+    },
+    {
+      question: 'How are coins used?',
+      answer: 'One coin equals one qualified lead submission. If a lead is rejected as invalid, the coin is automatically refunded to your balance.',
+    },
+    {
+      question: 'Do coins expire?',
+      answer: 'Coins roll over for up to 90 days. Any coins older than 90 days will expire.',
+    },
+    {
+      question: 'What counts as a “city” for Premium exclusivity?',
+      answer: 'We use official municipal boundaries (e.g., City of Toronto, City of Dubai). Suburbs and neighboring towns are separate territories.',
+    },
   ];
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50, rotateX: -15 },
-    visible: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.8, ease: 'easeOut' } },
-  };
-
-  const buttonVariants = {
-    hover: { scale: 1.05, boxShadow: '0 0 40px rgba(0, 212, 255, 0.5)' },
-    tap: { scale: 0.95 },
-  };
-
   return (
-    <section className="relative min-h-screen bg-gray-950 text-white overflow-hidden perspective-1000 font-sans">
-      {/* Cosmic Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-950 via-gray-900 to-gray-950">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,_rgba(0,212,255,0.2),_transparent,_rgba(138,43,226,0.2))] animate-[gradient-shift_25s_ease_infinite] bg-[length:200%_200%]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,_rgba(0,212,255,0.1),_transparent,_rgba(138,43,226,0.1))] animate-[gradient-shift_30s_ease_infinite_reverse] bg-[length:200%_200%]"></div>
+    <section className="relative min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-white overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-100 dark:from-gray-950 via-gray-200 dark:via-gray-900 to-gray-100 dark:to-gray-950">
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-orange-400/10 dark:from-sky-500/10 dark:to-orange-400/10 animate-[gradient-shift_20s_ease_infinite] bg-[length:200%_200%]"></div>
       </div>
 
-      {/* Glowing Orbs */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(25)].map((_, i) => (
+        {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-3 h-3 bg-cyan-400/70 rounded-full blur-md"
-            style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%` }}
-            animate={{ scale: [1, 2, 1], opacity: [0.5, 1, 0.5], x: Math.random() * 80 - 40, y: Math.random() * 80 - 40 }}
-            transition={{ duration: Math.random() * 10 + 10, repeat: true, repeatType: 'reverse', delay: Math.random() * 3 }}
+            className="absolute w-1 h-1 bg-orange-400/30 dark:bg-orange-300/30 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              repeatType: 'loop',
+              delay: Math.random() * 5,
+            }}
           />
         ))}
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 lg:py-24">
-        {/* Header */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 lg:py-24">
         <motion.div
-          initial={{ opacity: 0, y: 30, rotateX: -15 }}
-          animate={{ opacity: 1, y: 0, rotateX: 0 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-lg border border-cyan-500/40 rounded-full px-6 py-2 mb-6 shadow-[0_0_30px_rgba(0,212,255,0.4)]"
-            whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(0, 212, 255, 0.5)' }}
+            className="inline-flex items-center gap-2 bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-full px-4 py-1 mb-6"
+            whileHover={{ scale: 1.05 }}
           >
-            <Sparkles className="w-5 h-5 text-cyan-400" />
-            <span className="text-sm font-medium text-gray-100">Pricing Plans</span>
+            <Sparkles className="w-5 h-5 text-orange-400" />
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-100">Simple, Transparent Pricing</span>
           </motion.div>
-          <h1 className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-cyan-300 via-violet-400 to-cyan-300 bg-clip-text text-transparent mb-4 drop-shadow-[0_0_30px_rgba(0,212,255,0.7)] animate-[pulse_3s_ease_infinite]">
-            Choose Your Plan
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-sky-500 to-orange-400 bg-clip-text text-transparent mb-4 drop-shadow-[0_0_30px_rgba(255,165,0,0.3)]">
+            Pricing Plans
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Unlock the power of Reflo Hub with flexible pricing for freelancers and businesses. Start connecting and growing today!
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Whether you’re a solo referrer or a growing enterprise, Reflo Hub delivers pay-for-performance growth at a fraction of traditional advertising costs.
           </p>
+          {/* <div className="mt-8 flex justify-center gap-4">
+            <a
+              href="#"
+              className="bg-orange-400 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-500 transition"
+            >
+              Start Free Trial
+            </a>
+            <a
+              href="#"
+              className="bg-sky-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-sky-600 transition"
+            >
+              Book a Demo
+            </a>
+          </div> */}
         </motion.div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Freelancer Plan */}
-          <motion.div
-            variants={cardVariants}
-            initial="hidden"
-            animate="visible"
-            className="bg-gradient-to-b from-white/5 to-white/3 backdrop-blur-lg border border-cyan-500/40 rounded-2xl p-8 shadow-[0_0_50px_rgba(0,212,255,0.3)]"
-          >
-            <h2 className="text-2xl font-bold text-white mb-4">{freelancerPlan.name}</h2>
-            <p className="text-4xl font-extrabold text-cyan-300 mb-4">
-              ${freelancerPlan.price}/month
-            </p>
-            <ul className="space-y-2 mb-6">
-              {freelancerPlan.features.map((feature, i) => (
-                <li key={i} className="flex items-start text-gray-300">
-                  <span className="text-cyan-400 mr-2">✓</span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <h3 className="text-lg font-semibold text-white mb-2">Additional Coins</h3>
-            <ul className="space-y-2 mb-6">
-              {freelancerPlan.coinOptions.map((option, i) => (
-                <li key={i} className="text-gray-300">
-                  {option.coins} Coins: ${option.price}
-                </li>
-              ))}
-            </ul>
-            <motion.button
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap="tap"
-              className="group w-full px-8 py-4 text-white bg-gradient-to-r from-cyan-600 to-violet-600 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300"
-            >
-              <span className="flex items-center justify-center gap-2">
-                Get Started
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-              </span>
-            </motion.button>
-          </motion.div>
-
-          {/* Business Plans */}
-          {businessPlans.map((plan, i) => (
-            <motion.div
-              key={i}
-              variants={cardVariants}
-              initial="hidden"
-              animate="visible"
-              className="bg-gradient-to-b from-white/5 to-white/3 backdrop-blur-lg border border-cyan-500/40 rounded-2xl p-8 shadow-[0_0_50px_rgba(0,212,255,0.3)]"
-            >
-              <h2 className="text-2xl font-bold text-white mb-4">{plan.name}</h2>
-              <p className="text-4xl font-extrabold text-cyan-300 mb-2">
-                ${plan.monthlyFee}/month
-              </p>
-              <p className="text-sm text-gray-400 mb-4">+ ${plan.setupFee} setup fee</p>
-              <ul className="space-y-2 mb-6">
-                {plan.features.map((feature, j) => (
-                  <li key={j} className="flex items-start text-gray-300">
-                    <span className="text-cyan-400 mr-2">✓</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <motion.button
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-                className="group w-full px-8 py-4 text-white bg-gradient-to-r from-cyan-600 to-violet-600 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300"
-              >
-                <span className="flex items-center justify-center gap-2">
-                  Get Started
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-                </span>
-              </motion.button>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Additional Ad Campaigns */}
-        <motion.div
-          variants={cardVariants}
+        <motion.section
+          className="mb-20"
+          variants={sectionVariants}
           initial="hidden"
-          animate="visible"
-          className="max-w-3xl mx-auto mt-16 bg-gradient-to-b from-white/5 to-white/3 backdrop-blur-lg border border-cyan-500/40 rounded-2xl p-8 shadow-[0_0_50px_rgba(0,212,255,0.3)]"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
-          <h2 className="text-2xl font-bold text-white mb-4">Additional Ad Campaigns</h2>
-          <p className="text-gray-300 mb-6">
-            Boost your visibility with targeted ad campaigns for businesses.
-          </p>
-          <table className="w-full text-left text-gray-300">
-            <thead>
-              <tr className="border-b border-cyan-500/20">
-                <th className="py-2">Scope</th>
-                <th className="py-2">Cost</th>
-              </tr>
-            </thead>
-            <tbody>
-              {adCampaigns.map((campaign, i) => (
-                <tr key={i} className="border-b border-cyan-500/10">
-                  <td className="py-2">{campaign.scope}</td>
-                  <td className="py-2">{campaign.cost}</td>
-                </tr>
+          <h2 className="text-3xl font-bold text-center mb-8">For Freelancers</h2>
+          <p className="text-center text-xl text-gray-600 dark:text-gray-300 mb-8">Unlimited Earnings, One Low Subscription</p>
+          <div className="grid md:grid-cols-1 gap-6">
+            {freelancerPlans.map((plan, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-8"
+                variants={cardVariants}
+                whileHover="hover"
+              >
+                <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
+                <p className="text-3xl font-bold text-orange-400 mb-4">{plan.price}</p>
+                <ul className="text-gray-600 dark:text-gray-300 space-y-2">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-sky-400" /> {feature}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <h4 className="text-xl font-semibold text-center mb-4">Need More Coins?</h4>
+            <div className="grid md:grid-cols-2 gap-6">
+              {coinPacks.map((pack, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 text-center"
+                  variants={cardVariants}
+                  whileHover="hover"
+                >
+                  <h5 className="text-lg font-semibold mb-2">{pack.name}</h5>
+                  <p className="text-orange-400 font-bold mb-2">{pack.price}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{pack.value}</p>
+                </motion.div>
               ))}
-            </tbody>
-          </table>
-        </motion.div>
+            </div>
+            <p className="text-center text-gray-600 dark:text-gray-300 mt-4">Unused coins roll over for 90 days. All prices in USD.</p>
+          </div>
+        </motion.section>
+
+        <motion.section
+          className="mb-20"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-bold text-center mb-8">For Businesses</h2>
+          <p className="text-center text-xl text-gray-600 dark:text-gray-300 mb-8">Scale Leads, Not Costs</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {businessPlans.map((plan, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-8"
+                variants={cardVariants}
+                whileHover="hover"
+              >
+                <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
+                <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">One Time Setup: <span className="text-orange-400 font-bold">{plan.setup}</span></p>
+                <p className="text-3xl font-bold text-orange-400 mb-4">{plan.monthly}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{plan.bestFor}</p>
+              </motion.div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <h4 className="text-xl font-semibold text-center mb-4">Plan Features Breakdown</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-gray-200/60 dark:bg-white/10">
+                    <th className="p-4 text-gray-700 dark:text-gray-100">Features</th>
+                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Basic</th>
+                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Standard</th>
+                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Premium</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { name: 'Campaign Slots', key: 'campaignSlots' },
+                    { name: 'Referral Fee Customization', key: 'referralFee' },
+                    { name: 'AI Lead Verification', key: 'aiLead' },
+                    { name: 'API & CRM Integrations', key: 'apiCrm' },
+                    { name: 'Dedicated Customer Success Manager', key: 'customerSuccess' },
+                    { name: 'City Wide Category Monopoly*', key: 'cityMonopoly' },
+                    { name: 'Quarterly Strategy Call', key: 'strategyCall' },
+                    { name: 'No Risk Growth Guarantee**', key: 'growthGuarantee' },
+                  ].map((feature, i) => (
+                    <tr key={i} className="border-t border-gray-200 dark:border-white/10">
+                      <td className="p-4 text-gray-700 dark:text-gray-100">{feature.name}</td>
+                      {businessPlans.map((plan, j) => (
+                        <td key={j} className="p-4 text-center">
+                          {typeof plan.features[feature.key] === 'string' ? (
+                            plan.features[feature.key]
+                          ) : plan.features[feature.key] ? (
+                            <span className="text-sky-400">✔</span>
+                          ) : (
+                            '—'
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-gray-600 dark:text-gray-300 mt-4 text-sm">
+              *Monopoly Clause: When you choose Premium, no other competitor in your business category can sign up within the same city for as long as you maintain an active subscription.<br />
+              **Growth Guarantee: If zero customers convert in any consecutive 90 day window, we’ll credit you one month of Virtual Tech Masters’ Basic Ad Plan—free.
+            </p>
+          </div>
+        </motion.section>
+
+        <motion.section
+          className="mb-20"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-bold text-center mb-8">Need a Custom Solution?</h2>
+          <div className="bg-gradient-to-r from-sky-200/30 dark:from-sky-500/10 to-orange-200/30 dark:to-orange-400/10 border border-gray-200 dark:border-white/10 rounded-xl p-8 text-center">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
+              Enterprise multi-location or franchise network? Email{' '}
+              <a href="mailto:sales@reflohub.com" className="text-orange-400 hover:underline font-semibold">
+                sales@reflohub.com
+              </a>{' '}
+              for volume pricing and data residency options.
+            </p>
+          </div>
+        </motion.section>
+
+        <motion.section
+          className="mb-20"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6"
+                variants={cardVariants}
+                whileHover="hover"
+              >
+                <h4 className="text-xl font-semibold mb-2">{faq.question}</h4>
+                <p className="text-gray-600 dark:text-gray-300">{faq.answer}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        <motion.section
+          className="mb-20"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-bold text-center mb-8">Ready to Grow?</h2>
+          <p className="text-center text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Choose your plan and start generating—or receiving—qualified leads in minutes.
+          </p>
+          <div className="flex justify-center gap-4">
+            <a
+              href="/freelancer"
+              className="bg-orange-400 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-500 transition"
+            >
+              Join as a Freelancer
+            </a>
+            <a
+              href="/business"
+              className="bg-sky-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-sky-600 transition"
+            >
+              Join as a Business
+            </a>
+          </div>
+          <p className="text-center text-gray-600 dark:text-gray-300 mt-4 text-sm">
+            Prices exclude applicable taxes. Reflo Hub reserves the right to modify pricing with 30 days’ notice.
+          </p>
+        </motion.section>
       </div>
     </section>
   );

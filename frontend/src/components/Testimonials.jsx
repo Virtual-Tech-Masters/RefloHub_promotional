@@ -155,8 +155,8 @@ const Testimonials = () => {
           {[
             { number: '98%', label: 'Client Satisfaction' },
             { number: '4.9/5', label: 'Average Rating' },
-            { number: '$2.5M+', label: 'Commissions Paid' },
-            { number: '15K+', label: 'Success Stories' },
+            { number: '$500k+', label: 'Commissions Paid' },
+            { number: '500+', label: 'Success Stories' },
           ].map((stat, index) => (
             <motion.div
               key={index}

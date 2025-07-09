@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowRight, Mail, MapPin, Instagram, Linkedin, Facebook } from 'lucide-react';
+import { Sparkles, ArrowRight, Mail, MapPin, Instagram, Linkedin, Facebook,Phone } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: '',
   });
 
@@ -16,7 +17,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '',phone:'', message: '' });
   };
 
   const sectionVariants = {
@@ -129,6 +130,21 @@ const Contact = () => {
                   placeholder="Your Email"
                 />
               </div>
+                 <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  Phone
+                </label>
+                <input
+                  type="phone"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-3 bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-white/10 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all duration-300"
+                  placeholder="Your Phone Number"
+                />
+              </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Message
@@ -177,6 +193,20 @@ const Contact = () => {
                     Support@reflohub.com
                   </a>
                 </div>
+                
+              </div>
+                 <div className="flex items-start gap-4">
+                <Phone className="w-6 h-6 text-orange-400 mt-1" />
+                <div>
+                  <h3 className="text-lg font-medium">Phone</h3>
+                  <a
+                    href="tel:18552200505"
+                    className="text-gray-600 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-300 transition-colors duration-200"
+                  >
+                   (855) 220-0505 (toll free)
+                  </a>
+                </div>
+                
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-6 h-6 text-orange-400 mt-1">
