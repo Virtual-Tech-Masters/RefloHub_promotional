@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Mail, Twitter, Linkedin, Github, ArrowRight } from 'lucide-react';
+import { Instagram, Facebook, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const companyLinks = [
@@ -27,9 +28,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Twitter, label: 'Twitter' },
-    { icon: Linkedin, label: 'LinkedIn' },
-    { icon: Github, label: 'GitHub' },
+    { icon: Instagram, label: 'Instagram', url: 'https://www.instagram.com/reflohub/' },
+    { icon: Facebook, label: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61578387472424' },
+    { icon: MessageCircle, label: 'TikTok', url: 'https://www.tiktok.com/@reflo_hub?is_from_webapp=1&sender_device=pc' },
   ];
 
   return (
@@ -90,16 +91,20 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <motion.div
+                <motion.a
                   key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{
                     scale: 1.1,
                     color: '#38BDF8'
                   }}
                   className="w-10 h-10 bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-300 hover:border-sky-500 transition-all duration-200"
+                  aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
-                </motion.div>
+                </motion.a>
               ))}
             </div>
           </motion.div>

@@ -56,6 +56,14 @@ const Hero = () => {
           >
             Reflo Hub
           </motion.h1>
+               <motion.h2
+            className="text-5xl md:text-4xl font-extrabold bg-gradient-to-r from-sky-500 to-orange-400 bg-clip-text text-transparent mb-6 drop-shadow-[0_0_30px_rgba(255,165,0,0.6)]"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Keep 100% of What You Earn
+          </motion.h2>
 
           <motion.p
             className="text-xl md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12"

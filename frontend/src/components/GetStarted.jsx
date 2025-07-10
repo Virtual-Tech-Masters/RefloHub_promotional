@@ -50,22 +50,15 @@ const GetStarted = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const imgRef = useRef(null);
+  const [showConsent, setShowConsent] = useState(false);
 
-  const idProofOptions = {
-    India: ['Aadhaar', 'PAN', 'Passport', 'Driver’s License'],
-    USA: ['SSN', 'Passport', 'Driver’s License', 'State ID'],
-    Canada: ['SIN', 'Passport', 'Driver’s License', 'PR Card'],
-    UK: ['National Insurance Number', 'Passport', 'Driver’s License'],
-    Other: ['Passport', 'National ID', 'Driver’s License'],
-  };
-
-  const businessDocOptions = {
-    India: ['GST Certificate', 'PAN', 'Incorporation Certificate'],
-    USA: ['EIN', 'Incorporation Certificate'],
-    Canada: ['BN', 'Incorporation Certificate'],
-    UK: ['VAT Certificate', 'Incorporation Certificate'],
-    Other: ['Incorporation Certificate', 'Tax Registration'],
-  };
+  useEffect(() => {
+    // Data consent popup logic
+    const consentGiven = localStorage.getItem('reflohub_data_consent');
+    if (!consentGiven) {
+      setShowConsent(true);
+    }
+  }, []);
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -394,6 +387,11 @@ const GetStarted = () => {
     }
   };
 
+  const handleConsentAccept = () => {
+    localStorage.setItem('reflohub_data_consent', 'true');
+    setShowConsent(false);
+  };
+
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
@@ -407,6 +405,23 @@ const GetStarted = () => {
 
   return (
     <section className="relative min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-white overflow-hidden perspective-1000 font-sans">
+      {/* Data Consent Modal */}
+      {showConsent && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-md w-full shadow-2xl border border-orange-300/40">
+            <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Data Consent Required</h2>
+            <p className="mb-6 text-gray-700 dark:text-gray-300">
+              By proceeding, you agree to Reflo Hub's collection and processing of your personal data for registration and verification purposes, in accordance with our <a href="/privacy-policy" className="text-orange-500 underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="/data-processing-agreement" className="text-orange-500 underline" target="_blank" rel="noopener noreferrer">Data Processing Agreement</a>.
+            </p>
+            <button
+              onClick={handleConsentAccept}
+              className="w-full px-6 py-3 bg-gradient-to-r from-sky-500 to-orange-300 text-white rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-200"
+            >
+              I Agree & Continue
+            </button>
+          </div>
+        </div>
+      )}
       {/* Cosmic Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-100 dark:from-gray-950 via-gray-200 dark:via-gray-900 to-gray-100 dark:to-gray-950">
         <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-orange-300/10 dark:from-sky-500/10 dark:to-orange-300/10 animate-[gradient-shift_25s_ease_infinite] bg-[length:200%_200%]"></div>
@@ -482,6 +497,7 @@ const GetStarted = () => {
             animate="visible"
             exit="exit"
             className="max-w-2xl mx-auto bg-gradient-to-b from-gray-100/60 dark:from-white/5 to-gray-200/60 dark:to-white/3 backdrop-blur-lg border border-orange-300/40 rounded-2xl p-8 shadow-[0_0_50px_rgba(255,165,0,0.3)]"
+            style={showConsent ? { pointerEvents: 'none', opacity: 0.3, filter: 'blur(2px)' } : {}}
           >
             <div className="relative z-10">
               {userType === 'freelancer' ? (

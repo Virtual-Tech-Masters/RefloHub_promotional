@@ -7,52 +7,84 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      role: 'Freelance Marketing Consultant',
-      location: 'Toronto, Canada',
-      content: 'Reflo Hub has completely transformed my freelance business. I\'ve earned over $15,000 in commissions in just 6 months!',
+      name: 'Jessica Reed',
+      role: 'Freelancer',
+      location: 'Virtual Tech Masters',
+      content: 'I earn $1500–$2000 monthly through Reflo Hub just by referring clients. No risk, no investment—it\'s a genuine and rewarding platform!',
       rating: 5,
-      avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150',
+      avatar: 'JR',
     },
     {
-      name: 'Michael Chen',
-      role: 'CEO, TechStart Solutions',
-      location: 'San Francisco, USA',
-      content: 'The lead quality is exceptional. We\'ve closed 40% more deals since partnering with Reflo Hub. Highly recommended!',
+      name: 'Aman Verma',
+      role: 'Freelancer',
+      location: 'Virtual Tech Masters',
+      content: 'Reflo Hub changed the game for me. I now earn around $2000/month just by sharing business leads. It\'s simple and legit!',
       rating: 5,
-      avatar: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150',
+      avatar: 'AV',
     },
     {
-      name: 'Emma Rodriguez',
-      role: 'Business Development Manager',
-      location: 'Madrid, Spain',
-      content: 'The platform is intuitive and the support team is outstanding. Our lead conversion rate increased by 60%.',
+      name: 'Deepak Sharma',
+      role: 'Referral Partner',
+      location: 'Virtual Tech Masters',
+      content: 'No cold calling, no paid ads—just referrals. Reflo Hub helps me earn over $1800 a month consistently!',
       rating: 5,
-      avatar: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150',
+      avatar: 'DS',
     },
     {
-      name: 'James Wilson',
-      role: 'Freelance Sales Specialist',
-      location: 'London, UK',
-      content: 'I love how easy it is to submit leads and track my earnings. The commission structure is fair and transparent.',
+      name: 'Meena Arora',
+      role: 'Founder',
+      location: 'CraftNest',
+      content: 'Reflo Hub gave us quality leads from global freelancers. Cost-effective and result-driven!',
       rating: 5,
-      avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150',
+      avatar: 'MA',
     },
     {
-      name: 'Priya Patel',
-      role: 'Founder, Digital Growth Agency',
-      location: 'Mumbai, India',
-      content: 'Reflo Hub connected us with high-quality leads that actually convert. Our ROI has improved significantly.',
+      name: 'Sandeep Yadav',
+      role: 'CEO',
+      location: 'TechWave Solutions',
+      content: 'We stopped wasting money on ads. Reflo Hub brought us serious clients through referrals.',
       rating: 5,
-      avatar: 'https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=150',
+      avatar: 'SY',
     },
     {
-      name: 'Ahmed Al-Hassan',
-      role: 'Business Consultant',
-      location: 'Dubai, UAE',
-      content: 'The platform\'s analytics help me understand lead performance better. It\'s a game-changer for my consulting business.',
+      name: 'Rachel Adams',
+      role: 'CEO',
+      location: 'Overseas Travels Ltd.',
+      content: 'Reflo Hub connected us with freelancers who helped boost our travel bookings. Their referrals brought genuine clients, and we saw real growth without wasting money on ads.',
       rating: 5,
-      avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150',
+      avatar: 'RA',
+    },
+    {
+      name: 'Aman Singh',
+      role: 'Freelancer',
+      location: 'Overseas Travels Ltd.',
+      content: 'Thanks to Reflo Hub, I referred clients to Overseas Travels Ltd. and earned steady commissions. The process is simple, and payments are always on time.',
+      rating: 5,
+      avatar: 'AS',
+    },
+    {
+      name: 'Sophie Roy',
+      role: 'AJ Attire',
+      location: 'AJ Attire',
+      content: 'Reflo Hub connected us with talented freelancers who helped grow our brand fast and affordably.',
+      rating: 5,
+      avatar: 'SR',
+    },
+    {
+      name: 'Karan Verma',
+      role: 'Graphic Designer',
+      location: 'AJ Attire',
+      content: 'Working with AJ Attire through Reflo Hub has been fantastic. The projects are clear, payments are timely, and the team is very professional. A great experience for freelancers!',
+      rating: 5,
+      avatar: 'KV',
+    },
+    {
+      name: 'Emily Carter',
+      role: 'Freelance Marketer',
+      location: 'AJ Attire',
+      content: 'Reflo Hub connected me with AJ Attire for content and marketing work. The experience was smooth, and I got paid on time. Great platform for freelancers!',
+      rating: 5,
+      avatar: 'EC',
     },
   ];
 
@@ -110,11 +142,9 @@ const Testimonials = () => {
                     </div>
 
                     <div className="flex items-center justify-center space-x-4">
-                      <img
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        className="w-16 h-16 rounded-full object-cover border-2 border-sky-400/30 dark:border-orange-300/30"
-                      />
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-r from-sky-500 to-orange-400 flex items-center justify-center text-white font-bold text-lg border-2 border-sky-400/30 dark:border-orange-300/30">
+                        {testimonial.avatar}
+                      </div>
                       <div className="text-left">
                         <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
                           {testimonial.name}

@@ -103,7 +103,7 @@ const Freelancer = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Sparkles className="w-4 h-4 text-orange-300" aria-hidden="true" />
-              <span className="text-sm text-gray-700 dark:text-gray-100">Last Updated: July 01, 2025</span>
+              {/* <span className="text-sm text-gray-700 dark:text-gray-100">Last Updated: July 01, 2025</span> */}
             </motion.div>
 
             <motion.h1

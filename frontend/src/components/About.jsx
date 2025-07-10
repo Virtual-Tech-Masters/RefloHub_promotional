@@ -222,7 +222,7 @@ To provide the most transparent, globally scalable referral lead exchange platfo
           <h2 className="text-3xl font-bold text-center mb-8">📍 Serving the World from UAE</h2>
           <div className="bg-gradient-to-r from-sky-200/30 dark:from-sky-500/10 to-orange-200/30 dark:to-orange-400/10 border border-gray-200 dark:border-white/10 rounded-xl p-8 text-center">
             <p className="text-lg text-gray-700 dark:text-gray-300">
-             Reflo Hub Ltd operates under the UAE’s open, business-friendly policies and is proudly based in the Emirates. Our SaaS architecture enables seamless operations across 100+ countries while ensuring full global compliance.
+             Reflo Hub operates under the UAE’s open, business-friendly policies and is proudly based in the Emirates. Our SaaS architecture enables seamless operations across 100+ countries while ensuring full global compliance.
             </p>
           </div>
         </motion.section>

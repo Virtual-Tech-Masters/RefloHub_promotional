@@ -351,7 +351,7 @@ const Business = () => {
                 title: 'Business Basic',
                 description: 'Perfect for growing businesses in India',
                 price: '$25/month',
-                discount: '33% off (was $50)',
+                discount: '50% off (was $50)',
                 setup: '$99 (was $199)',
                 features: ['15 Leads/Month', '5 Free Monthly Ads', 'Dashboard Analytics'],
                 gradient: true,
@@ -362,7 +362,7 @@ const Business = () => {
                 title: 'Business Standard',
                 description: 'Ideal for high-growth businesses in India',
                 price: '$39/month',
-                discount: '33% off (was $79)',
+                discount: '50% off (was $79)',
                 setup: '$129 (was $269)',
                 features: ['Unlimited Leads', '10 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
                 gradient: true,
@@ -465,7 +465,7 @@ const Business = () => {
                 </motion.div>
               ))}
             </div>
-            <p className="text-center text-gray-600 dark:text-gray-300 mt-4">Basic Plan: 5 free ads/month | Premium Plan: 10 free ads/month</p>
+            <p className="text-center text-gray-600 dark:text-gray-300 mt-4">Basic Plan: 5 free ads/month | Standard Plan: 10 free ads/month | Premium Plan: 25 free ads/month</p>
           </motion.div>
         </section>
 

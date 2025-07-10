@@ -71,7 +71,7 @@ const JoinCTA = () => {
               {
                 icon: TrendingUp,
                 title: 'Proven Results',
-                description: 'Average 60% increase in lead conversion rates',
+                description: 'Average 80% increase in lead conversion rates',
               },
               {
                 icon: Sparkles,

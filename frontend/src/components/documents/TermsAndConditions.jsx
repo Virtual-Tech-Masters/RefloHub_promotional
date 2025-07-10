@@ -12,7 +12,7 @@ const TermsAndConditions = () => {
         <p><strong>Reflo Hub FZ LLC</strong></p>
         <p>IFZA Business Park, (DDP)</p>
         <p>PO Box 342001, Dubai, United Arab Emirates</p>
-        <p><strong>Email:</strong> <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">legal@reflohub.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a></p>
         <p><strong>Tel:</strong> 1-855-220-0505</p>
         <p>Reflo Hub is incorporated as a private limited company under the Dubai Integrated Economic Zones Implementing Regulations 2023. We do not maintain an establishment or appointed representative in the EU/EEA, Canada, or the United States.</p>
       `,

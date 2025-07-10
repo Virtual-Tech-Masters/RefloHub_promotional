@@ -113,7 +113,7 @@ const Navbar = () => {
                   onClick={toggleMenu}
                   className={`block px-3 py-2 text-base font-medium text-gray-900 dark:text-white hover:text-cyan-400 hover:bg-gray-200/60 dark:hover:bg-white/5 rounded-lg transition-colors duration-300 ${
                     item.name === 'Get Started'
-                      ? 'bg-gradient-to-r from-cyan-500 dark:from-cyan-600 to-violet-500 dark:to-violet-600 text-white'
+                      ? 'bg-gradient-to-r from-sky-500 to-orange-300 text-white'
                       : ''
                   }`}
                 >

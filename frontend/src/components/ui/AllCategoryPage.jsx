@@ -115,10 +115,10 @@ const AllCategoryPage = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-sky-500 to-orange-400 bg-clip-text text-transparent mb-4 drop-shadow-[0_0_30px_rgba(255,165,0,0.3)]">
-            Categories in USA
+            All Categories
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Explore a wide range of professional services and businesses available in the USA.
+            Explore a wide range of professional services and businesses available.
           </p>
         </motion.div>
 
