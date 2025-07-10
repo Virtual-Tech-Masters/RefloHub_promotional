@@ -62,7 +62,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Keep 100% of What You Earn
+            Keep 100% Of Your Earning.
           </motion.h2>
 
           <motion.p

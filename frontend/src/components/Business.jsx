@@ -104,7 +104,7 @@ const Business = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Sparkles className="w-4 h-4 text-orange-300" aria-hidden="true" />
-              <span className="text-sm text-gray-700 dark:text-gray-100">Last Updated: July 01, 2025</span>
+              {/* <span className="text-sm text-gray-700 dark:text-gray-100">Last Updated: July 01, 2025</span> */}
             </motion.div>
 
             <motion.h1
@@ -350,8 +350,8 @@ const Business = () => {
                 region: 'India',
                 title: 'Business Basic',
                 description: 'Perfect for growing businesses in India',
-                price: '$25/month',
-                discount: '50% off (was $50)',
+                price: '$45/month',
+                discount: '50% off (was $90)',
                 setup: '$99 (was $199)',
                 features: ['15 Leads/Month', '5 Free Monthly Ads', 'Dashboard Analytics'],
                 gradient: true,
@@ -361,8 +361,8 @@ const Business = () => {
                 region: 'India',
                 title: 'Business Standard',
                 description: 'Ideal for high-growth businesses in India',
-                price: '$39/month',
-                discount: '50% off (was $79)',
+                price: '$65/month',
+                discount: '50% off (was $130)',
                 setup: '$129 (was $269)',
                 features: ['Unlimited Leads', '10 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
                 gradient: true,

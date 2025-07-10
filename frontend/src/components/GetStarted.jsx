@@ -20,6 +20,7 @@ const GetStarted = () => {
       idProofs: [],
       password: '',
       confirmPassword: '',
+      acceptTerms: false,
     },
     business: {
       companyName: '',
@@ -36,6 +37,7 @@ const GetStarted = () => {
       businessDocs: [],
       password: '',
       confirmPassword: '',
+      acceptTerms: false,
     },
   });
   const [errors, setErrors] = useState({});
@@ -50,15 +52,15 @@ const GetStarted = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const imgRef = useRef(null);
-  const [showConsent, setShowConsent] = useState(false);
 
-  useEffect(() => {
-    // Data consent popup logic
-    const consentGiven = localStorage.getItem('reflohub_data_consent');
-    if (!consentGiven) {
-      setShowConsent(true);
-    }
-  }, []);
+
+  // useEffect(() => {
+  //   // Data consent popup logic
+  //   const consentGiven = localStorage.getItem('reflohub_data_consent');
+  //   if (!consentGiven) {
+  //     setShowConsent(true);
+  //   }
+  // }, []);
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -123,6 +125,7 @@ const GetStarted = () => {
         idProofs: [],
         password: '',
         confirmPassword: '',
+        acceptTerms: false,
       },
       business: {
         companyName: '',
@@ -139,6 +142,7 @@ const GetStarted = () => {
         businessDocs: [],
         password: '',
         confirmPassword: '',
+        acceptTerms: false,
       },
     });
     setErrors({});
@@ -160,6 +164,7 @@ const GetStarted = () => {
       if (!data.password) newErrors.password = 'Password is required';
       else if (data.password.length < 8) newErrors.password = 'Password must be at least 8 characters';
       if (data.password !== data.confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
+      if (!data.acceptTerms) newErrors.acceptTerms = 'You must accept the terms and conditions';
     } else {
       if (!data.companyName) newErrors.companyName = 'Company name is required';
       if (!data.legalName) newErrors.legalName = 'Legal name is required';
@@ -174,15 +179,16 @@ const GetStarted = () => {
       if (!data.password) newErrors.password = 'Password is required';
       else if (data.password.length < 8) newErrors.password = 'Password must be at least 8 characters';
       if (data.password !== data.confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
+      if (!data.acceptTerms) newErrors.acceptTerms = 'You must accept the terms and conditions';
     }
     return newErrors;
   };
 
   const handleChange = (e, type) => {
-    const { name, value } = e.target;
+    const { name, value, type: inputType, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [type]: { ...prev[type], [name]: value },
+      [type]: { ...prev[type], [name]: inputType === 'checkbox' ? checked : value },
     }));
     setErrors((prev) => ({ ...prev, [name]: '' }));
   };
@@ -387,10 +393,7 @@ const GetStarted = () => {
     }
   };
 
-  const handleConsentAccept = () => {
-    localStorage.setItem('reflohub_data_consent', 'true');
-    setShowConsent(false);
-  };
+
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -405,23 +408,7 @@ const GetStarted = () => {
 
   return (
     <section className="relative min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-white overflow-hidden perspective-1000 font-sans">
-      {/* Data Consent Modal */}
-      {showConsent && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-          <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-md w-full shadow-2xl border border-orange-300/40">
-            <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Data Consent Required</h2>
-            <p className="mb-6 text-gray-700 dark:text-gray-300">
-              By proceeding, you agree to Reflo Hub's collection and processing of your personal data for registration and verification purposes, in accordance with our <a href="/privacy-policy" className="text-orange-500 underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="/data-processing-agreement" className="text-orange-500 underline" target="_blank" rel="noopener noreferrer">Data Processing Agreement</a>.
-            </p>
-            <button
-              onClick={handleConsentAccept}
-              className="w-full px-6 py-3 bg-gradient-to-r from-sky-500 to-orange-300 text-white rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-200"
-            >
-              I Agree & Continue
-            </button>
-          </div>
-        </div>
-      )}
+
       {/* Cosmic Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-100 dark:from-gray-950 via-gray-200 dark:via-gray-900 to-gray-100 dark:to-gray-950">
         <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-orange-300/10 dark:from-sky-500/10 dark:to-orange-300/10 animate-[gradient-shift_25s_ease_infinite] bg-[length:200%_200%]"></div>
@@ -497,7 +484,7 @@ const GetStarted = () => {
             animate="visible"
             exit="exit"
             className="max-w-2xl mx-auto bg-gradient-to-b from-gray-100/60 dark:from-white/5 to-gray-200/60 dark:to-white/3 backdrop-blur-lg border border-orange-300/40 rounded-2xl p-8 shadow-[0_0_50px_rgba(255,165,0,0.3)]"
-            style={showConsent ? { pointerEvents: 'none', opacity: 0.3, filter: 'blur(2px)' } : {}}
+
           >
             <div className="relative z-10">
               {userType === 'freelancer' ? (
@@ -691,6 +678,36 @@ const GetStarted = () => {
                       </p>
                     )}
                   </div>
+                  <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                    <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
+                      <strong>Important:</strong> Please review our{' '}
+                      <a href="/freelancer-registration-consent" className="text-orange-300 hover:underline font-semibold" target="_blank" rel="noopener noreferrer">
+                        Freelancer Registration Consent
+                      </a>{' '}
+                      before proceeding with registration.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      name="acceptTerms"
+                      checked={formData.freelancer.acceptTerms}
+                      onChange={(e) => handleChange(e, 'freelancer')}
+                      className="mt-1 w-4 h-4 text-orange-300 bg-gray-100/60 dark:bg-gray-800/50 border border-gray-200 dark:border-white/10 rounded focus:ring-2 focus:ring-orange-300"
+                      required
+                    />
+                    <label className="text-sm text-gray-600 dark:text-gray-300">
+                      I agree to the{' '}
+                      <a href="/terms-and-conditions" className="text-orange-300 hover:underline" target="_blank" rel="noopener noreferrer">
+                        Terms and Conditions
+                      </a>{' '}
+                      and{' '}
+                      <a href="/privacy-policy" className="text-orange-300 hover:underline" target="_blank" rel="noopener noreferrer">
+                        Privacy Policy
+                      </a>
+                    </label>
+                  </div>
+                  {errors.acceptTerms && <p className="text-red-400 text-sm mt-1">{errors.acceptTerms}</p>}
                   {errors.submit && <p className="text-red-400 text-sm mt-4">{errors.submit}</p>}
                   <motion.button
                     type="submit"
@@ -960,6 +977,36 @@ const GetStarted = () => {
                       </p>
                     )}
                   </div>
+                  <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                    <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
+                      <strong>Important:</strong> Please review our{' '}
+                      <a href="/business-registration-consent" className="text-orange-300 hover:underline font-semibold" target="_blank" rel="noopener noreferrer">
+                        Business Registration Consent
+                      </a>{' '}
+                      before proceeding with registration.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      name="acceptTerms"
+                      checked={formData.business.acceptTerms}
+                      onChange={(e) => handleChange(e, 'business')}
+                      className="mt-1 w-4 h-4 text-orange-300 bg-gray-100/60 dark:bg-gray-800/50 border border-gray-200 dark:border-white/10 rounded focus:ring-2 focus:ring-orange-300"
+                      required
+                    />
+                    <label className="text-sm text-gray-600 dark:text-gray-300">
+                      I agree to the{' '}
+                      <a href="/terms-and-conditions" className="text-orange-300 hover:underline" target="_blank" rel="noopener noreferrer">
+                        Terms and Conditions
+                      </a>{' '}
+                      and{' '}
+                      <a href="/privacy-policy" className="text-orange-300 hover:underline" target="_blank" rel="noopener noreferrer">
+                        Privacy Policy
+                      </a>
+                    </label>
+                  </div>
+                  {errors.acceptTerms && <p className="text-red-400 text-sm mt-1">{errors.acceptTerms}</p>}
                   {errors.submit && <p className="text-red-400 text-sm mt-4">{errors.submit}</p>}
                   <motion.button
                     type="submit"

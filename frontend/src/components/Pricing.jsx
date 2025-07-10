@@ -36,7 +36,8 @@ const Pricing = () => {
       monthly: '$79',
       bestFor: 'Start ups & local SMBs launching their first referral campaign',
       features: {
-        campaignSlots: '3',
+        leads: '15',
+        campaignSlots: '5',
         referralFee: true,
         aiLead: true,
         apiCrm: false,
@@ -52,7 +53,8 @@ const Pricing = () => {
       monthly: '$99',
       bestFor: 'Growing teams managing multiple products or territories',
       features: {
-        campaignSlots: '10',
+        leads: 'Unlimited',
+        campaignSlots: '15',
         referralFee: true,
         aiLead: true,
         apiCrm: true,
@@ -68,7 +70,8 @@ const Pricing = () => {
       monthly: 'On call',
       bestFor: 'Market leaders who want exclusive category rights in their city*',
       features: {
-        campaignSlots: 'Unlimited',
+        leads: 'Unlimited',
+        campaignSlots: '25',
         referralFee: true,
         aiLead: true,
         apiCrm: true,
@@ -255,6 +258,7 @@ const Pricing = () => {
                 </thead>
                 <tbody>
                   {[
+                    { name: 'Leads per Month', key: 'leads' },
                     { name: 'Campaign Slots', key: 'campaignSlots' },
                     { name: 'Referral Fee Customization', key: 'referralFee' },
                     { name: 'AI Lead Verification', key: 'aiLead' },
