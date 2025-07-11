@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gray-950 text-gray-900 dark:text-white">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gray-950 text-gray-900 dark:text-white pt-20">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-100 dark:from-gray-950 via-gray-200 dark:via-gray-900 to-gray-100 dark:to-gray-950">
         <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-orange-400/10 dark:from-sky-500/10 dark:to-orange-400/10 animate-[gradient-shift_20s_ease_infinite] bg-[length:200%_200%]"></div>
@@ -41,11 +41,11 @@ const Hero = () => {
           className="mb-8"
         >
           <motion.div
-            className="inline-flex items-center space-x-2 bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-full px-4 py-1 mb-8"
+            className="inline-flex items-center space-x-2 bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-full px-4 py-1 mb-4 md:mb-8"
             whileHover={{ scale: 1.05 }}
           >
             <Sparkles className="w-4 h-4 text-orange-400" />
-            <span className="text-sm text-gray-900 dark:text-gray-100">Now Available in 20+ Countries</span>
+            <span className="text-xs sm:text-sm text-gray-900 dark:text-gray-100">Now Available in 20+ Countries</span>
           </motion.div>
 
           <motion.h1
@@ -56,8 +56,8 @@ const Hero = () => {
           >
             Reflo Hub
           </motion.h1>
-               <motion.h2
-            className="text-5xl md:text-4xl font-extrabold bg-gradient-to-r from-sky-500 to-orange-400 bg-clip-text text-transparent mb-6 drop-shadow-[0_0_30px_rgba(255,165,0,0.6)]"
+          <motion.h2
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-sky-500 to-orange-400 bg-clip-text text-transparent mb-6 drop-shadow-[0_0_30px_rgba(255,165,0,0.6)]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

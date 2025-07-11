@@ -315,7 +315,6 @@ const Business = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
-                region: 'World Wide',
                 title: 'Business Basic',
                 description: 'Perfect for growing businesses',
                 price: '$79/month',
@@ -323,10 +322,8 @@ const Business = () => {
                 setup: '$249 (was $599)',
                 features: ['15 Leads/Month', '5 Free Monthly Ads', 'Dashboard Analytics'],
                 gradient: true,
-                cardNumber: 1
               },
               {
-                region: 'World Wide',
                 title: 'Business Standard',
                 description: 'Ideal for high-growth businesses',
                 price: '$99/month',
@@ -334,18 +331,14 @@ const Business = () => {
                 setup: '$349 (was $699)',
                 features: ['Unlimited Leads', '10 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
                 gradient: true,
-                cardNumber: 1
               },
               {
-                region: 'World Wide',
                 title: 'Business Premium',
                 description: 'Lock in your territory with exclusive leads',
                 price: 'Price on request',
                 features: ['Unlimited Leads', 'Exclusivity city-wide', '25 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
                 gradient: true,
-                cardNumber: 3
               },
-
             ].map((plan, index) => (
               <motion.div
                 key={index}
@@ -357,21 +350,19 @@ const Business = () => {
                 className={`bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border ${plan.gradient ? 'border-orange-300/50' : 'border-gray-200 dark:border-white/10'
                   } rounded-xl p-8 flex flex-col relative`}
               >
-                {
-                  plan.cardNumber === 1 ? (
-                   <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 z-20 flex flex-col items-center pointer-events-none">
-                  <span className="inline-flex font-bold items-center gap-1 px-4 py-2 rounded-full text-xs bg-gradient-to-br from-sky-500/90 to-orange-300/90 text-white shadow-xl ring-2 ring-white dark:ring-gray-950 animate-bounce-slow">
-                    <svg className="w-4 h-4 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path d="M12 2v2m6.364 1.636l-1.414 1.414M22 12h-2m-1.636 6.364l-1.414-1.414M12 22v-2m-6.364-1.636l1.414-1.414M2 12h2m1.636-6.364l1.414 1.414" />
-                    </svg>
-                    33% OFF
-                  </span>
-                </div>
-                  ) : null
-
-                }
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-300 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">
-                  {plan.region}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center pointer-events-none">
+                  {index === 2 ? (
+                    <span className="inline-flex font-bold items-center gap-1 px-4 py-2 rounded-full text-xs bg-gradient-to-br from-orange-300/90 to-sky-500/90 text-white shadow-xl ring-2 ring-white dark:ring-gray-950 animate-bounce-slow">
+                      On Request
+                    </span>
+                  ) : (
+                    <span className="inline-flex font-bold items-center gap-1 px-4 py-2 rounded-full text-xs bg-gradient-to-br from-sky-500/90 to-orange-300/90 text-white shadow-xl ring-2 ring-white dark:ring-gray-950 animate-bounce-slow">
+                      <svg className="w-4 h-4 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path d="M12 2v2m6.364 1.636l-1.414 1.414M22 12h-2m-1.636 6.364l-1.414-1.414M12 22v-2m-6.364-1.636l1.414-1.414M2 12h2m1.636-6.364l1.414 1.414" />
+                      </svg>
+                      33% OFF
+                    </span>
+                  )}
                 </div>
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold mb-2">{plan.title}</h3>
