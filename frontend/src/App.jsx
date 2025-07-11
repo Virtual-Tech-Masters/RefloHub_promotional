@@ -32,6 +32,7 @@ import Career from './components/Career';
 import Feature from './components/Feature';
 import AllCategoryPage from './components/ui/AllCategoryPage';
 import Pricing from './components/Pricing';
+import ScrollToTop from './components/ui/ScrollToTop';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -68,6 +69,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="bg-dark-bg text-dark-text min-h-screen">
         <Preloader isLoading={isLoading} />
         {!isLoading && (

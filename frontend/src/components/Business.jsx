@@ -96,7 +96,7 @@ const Business = () => {
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         {/* Hero Section */}
-        <section className="pt-32 pb-20">
+        <section className="pt-12 pb-8">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-12 text-center">
             <motion.div
               className="inline-flex items-center space-x-2 bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-full px-4 py-1.5 mb-8"
@@ -346,38 +346,6 @@ const Business = () => {
                 cardNumber: 3
               },
 
-              {
-                region: 'India',
-                title: 'Business Basic',
-                description: 'Perfect for growing businesses in India',
-                price: '$45/month',
-                discount: '50% off (was $90)',
-                setup: '$99 (was $199)',
-                features: ['15 Leads/Month', '5 Free Monthly Ads', 'Dashboard Analytics'],
-                gradient: true,
-                cardNumber: 1
-              },
-              {
-                region: 'India',
-                title: 'Business Standard',
-                description: 'Ideal for high-growth businesses in India',
-                price: '$65/month',
-                discount: '50% off (was $130)',
-                setup: '$129 (was $269)',
-                features: ['Unlimited Leads', '10 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
-                gradient: true,
-                cardNumber: 1
-
-              },
-              {
-                region: 'India',
-                title: 'Business Premium',
-                description: 'Lock in your territory with exclusive leads',
-                price: 'Price on request',
-                features: ['Unlimited Leads', 'Exclusivity city-wide', '25 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
-                gradient: true,
-                cardNumber: 6
-              },
             ].map((plan, index) => (
               <motion.div
                 key={index}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/reflo_Logo.png';
+import logo from '../../assets/chat.png';
 import { useTheme } from '../../ThemeContext.jsx';
 
 const Navbar = () => {

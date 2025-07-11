@@ -66,8 +66,7 @@ const TermsAndConditions = () => {
             <tr><td class="border border-gray-300 dark:border-gray-600 p-2">Business (Global)</td><td>Basic</td><td>249 setup + 79 / month</td><td>One time + Monthly</td></tr>
             <tr><td class="border border-gray-300 dark:border-gray-600 p-2">Business (Global)</td><td>Standard</td><td>349 setup + 99 / month</td><td>One time + Monthly</td></tr>
             <tr><td class="border border-gray-300 dark:border-gray-600 p-2">Business (Global)</td><td>Premium</td><td>Price on call</td><td>Custom</td></tr>
-            <tr><td class="border border-gray-300 dark:border-gray-600 p-2">Business (India)</td><td>Basic (IN)</td><td>99 setup + 25 / month</td><td>One time + Monthly</td></tr>
-            <tr><td class="border border-gray-300 dark:border-gray-600 p-2">Business (India)</td><td>Standard (IN)</td><td>129 setup + 39 / month</td><td>One time + Monthly</td></tr>
+           
           </tbody>
         </table>
         <p class="mt-4">All fees are exclusive of taxes unless stated otherwise. Applicable taxes (e.g., VAT, GST/HST, UAE VAT) are charged based on your billing address.</p>
