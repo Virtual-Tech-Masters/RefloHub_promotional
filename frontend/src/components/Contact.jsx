@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowRight, Mail, MapPin, Instagram, Linkedin, Facebook,Phone } from 'lucide-react';
+import { Sparkles, ArrowRight, Mail, MapPin, Instagram, Linkedin, Facebook,Phone, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -216,7 +216,7 @@ const Contact = () => {
                   <h3 className="text-lg font-medium">Follow Us</h3>
                   <div className="flex gap-4">
                     <a
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/reflohub/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-300 transition-colors duration-200"
@@ -224,20 +224,20 @@ const Contact = () => {
                       <Instagram className="w-6 h-6" />
                     </a>
                     <a
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-300 transition-colors duration-200"
-                    >
-                      <Linkedin className="w-6 h-6" />
-                    </a>
-                    <a
-                      href="https://facebook.com"
+                      href="https://www.facebook.com/profile.php?id=61578387472424"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-300 transition-colors duration-200"
                     >
                       <Facebook className="w-6 h-6" />
+                    </a>
+                    <a
+                      href="https://www.tiktok.com/@reflo_hub?is_from_webapp=1&sender_device=pc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-300 transition-colors duration-200"
+                    >
+                      <MessageCircle className="w-6 h-6" />
                     </a>
                   </div>
                 </div>
