@@ -318,8 +318,8 @@ const Business = () => {
                 title: 'Business Basic',
                 description: 'Perfect for growing businesses',
                 price: '$79/month',
-                discount: '33% off (was $129)',
-                setup: '$249 (was $599)',
+                discount: '50% off (was $158)',
+                setup: '$249 (was $499)',
                 features: ['15 Leads/Month', '5 Free Monthly Ads', 'Dashboard Analytics'],
                 gradient: true,
               },
@@ -327,7 +327,7 @@ const Business = () => {
                 title: 'Business Standard',
                 description: 'Ideal for high-growth businesses',
                 price: '$99/month',
-                discount: '33% off (was $149)',
+                discount: '50% off (was $198)',
                 setup: '$349 (was $699)',
                 features: ['Unlimited Leads', '10 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
                 gradient: true,
@@ -360,7 +360,7 @@ const Business = () => {
                       <svg className="w-4 h-4 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <path d="M12 2v2m6.364 1.636l-1.414 1.414M22 12h-2m-1.636 6.364l-1.414-1.414M12 22v-2m-6.364-1.636l1.414-1.414M2 12h2m1.636-6.364l1.414 1.414" />
                       </svg>
-                      33% OFF
+                      50% OFF
                     </span>
                   )}
                 </div>

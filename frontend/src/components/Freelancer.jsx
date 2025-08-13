@@ -337,7 +337,7 @@ const Freelancer = () => {
                   <svg className="w-4 h-4 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path d="M12 2v2m6.364 1.636l-1.414 1.414M22 12h-2m-1.636 6.364l-1.414-1.414M12 22v-2m-6.364-1.636l1.414-1.414M2 12h2m1.636-6.364l1.414 1.414" />
                   </svg>
-                  33% OFF
+                  50% OFF
                 </span>
               </div>
 
@@ -346,7 +346,7 @@ const Freelancer = () => {
                 <span className="text-4xl font-bold">$9.99</span>
                 <span className="text-lg text-gray-600 dark:text-gray-300 ml-1">/month</span>
               </div>
-              <p className="text-md text-sky-500 mb-2 font-bold">(was $14.99) </p>
+              <p className="text-md text-sky-500 mb-2 font-bold">(was $19.98) </p>
               <p className="text-md text-orange-300 mb-6 font-bold">Limited Time Offer </p>
 
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/chat.png';
+import logo from '../../assets/new_ref.png';
 import { useTheme } from '../../ThemeContext.jsx';
 
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="Reflo Hub Logo"
-                className="h-20 w-20 object-contain"
+                className="h-16 w-16 object-contain"
               />
             </Link>
           </motion.div>
